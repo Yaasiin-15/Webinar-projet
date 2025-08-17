@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #1e3a8a; /* blue-800 - Professional navy for trust and authority */
+  --color-secondary: #3b82f6; /* blue-500 - Supporting blue for hierarchy and links */
+  --color-accent: #ea580c; /* orange-600 - High-contrast orange for CTAs and urgency elements */
+  
+  /* Background Colors */
+  --color-background: #ffffff; /* white - Clean white canvas for maximum readability */
+  --color-surface: #f8fafc; /* slate-50 - Subtle gray for section separation without borders */
+  
+  /* Text Colors */
+  --color-text-primary: #1f2937; /* gray-800 - High contrast dark gray for scanning */
+  --color-text-secondary: #6b7280; /* gray-500 - Medium gray for supporting text without distraction */
+  
+  /* Status Colors */
+  --color-success: #059669; /* emerald-600 - Green for form confirmation and positive indicators */
+  --color-warning: #d97706; /* amber-600 - Amber for countdown timer and urgency messaging */
+  --color-error: #dc2626; /* red-600 - Red for form validation feedback only */
+  
+  /* Border Colors */
+  --color-border: #e5e7eb; /* gray-200 - Minimal borders for form inputs and subtle card separation */
+  
+  /* Shadow Values */
+  --shadow-cta: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Subtle elevation for CTA buttons */
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1); /* Testimonial cards shadow */
+  
+  /* Animation */
+  --transition-default: 200ms ease-in-out; /* CTA hover states and form focus indicators */
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white font-poppins font-semibold px-6 py-3 rounded-lg transition-all duration-200 ease-in-out;
+    box-shadow: var(--shadow-cta);
+  }
+  
+  .btn-primary:hover {
+    @apply bg-orange-700 transform -translate-y-0.5;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg p-6;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .form-input {
+    @apply border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-200 ease-in-out;
+  }
+  
+  .countdown-timer {
+    @apply bg-warning text-white font-poppins font-semibold px-4 py-2 rounded-lg;
+  }
+  
+  .section-divider {
+    @apply bg-surface py-16;
+  }
+}
